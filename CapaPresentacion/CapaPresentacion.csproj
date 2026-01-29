@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="FrmEditar_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditar_empleado.Designer.cs">
+      <DependentUpon>FrmEditar_empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGuardar_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGuardar_empleado.Designer.cs">
+      <DependentUpon>FrmGuardar_empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +63,14 @@
       <Project>{4d9362ef-aeb1-42c0-8af5-ae57d57139fd}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmEditar_empleado.resx">
+      <DependentUpon>FrmEditar_empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGuardar_empleado.resx">
+      <DependentUpon>FrmGuardar_empleado.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
