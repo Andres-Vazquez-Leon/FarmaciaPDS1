@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     public class Metodos
     {
-        public static DataTable Mostrar_informacion(string store_p)
+        public DataTable Mostrar_informacion(string store_p)
         {
 
 
