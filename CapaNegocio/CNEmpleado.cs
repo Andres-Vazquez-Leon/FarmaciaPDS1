@@ -17,13 +17,21 @@ namespace CapaNegocio
             Datos_1.Nombrecompleto = nombrecompleto;
             return Datos.Mostrar_informacion("spbuscar_empleado_nombre");
         }
+
+        public static DataTable BuscarClave(int cve_empleado)
+        {
+            Metodos Datos = new Metodos();
+            CDEmpleado Datos_1 = new CDEmpleado();
+            Datos_1.Cve_empleado = cve_empleado;
+            return Datos.Mostrar_informacion("spbuscar_empleado_clave");
+        }
         public static DataTable Listar()
         {
             Metodos Datos = new Metodos();
             return Datos.Mostrar_informacion("splistar_empleado");
         }
 
-        public static DataTable Elimninar(int cve_empleado)
+        public static DataTable Eliminar(int cve_empleado)
         {
             Metodos Datos = new Metodos();
             CDEmpleado Datos_1 = new CDEmpleado();

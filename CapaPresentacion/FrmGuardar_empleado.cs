@@ -12,6 +12,8 @@ namespace CapaPresentacion
 {
     public partial class FrmGuardar_empleado : Form
     {
+        public bool Insert = false;
+        public bool Edit = false;
         public FrmGuardar_empleado()
         {
             InitializeComponent();

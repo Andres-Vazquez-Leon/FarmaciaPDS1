@@ -33,13 +33,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cboxClave_farmacia = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtClave_empleado = new System.Windows.Forms.TextBox();
+            this.txtclave_empleado = new System.Windows.Forms.TextBox();
+            this.txtclave = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -88,14 +88,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Clave farmacia";
             // 
-            // cboxClave_farmacia
-            // 
-            this.cboxClave_farmacia.FormattingEnabled = true;
-            this.cboxClave_farmacia.Location = new System.Drawing.Point(76, 274);
-            this.cboxClave_farmacia.Name = "cboxClave_farmacia";
-            this.cboxClave_farmacia.Size = new System.Drawing.Size(121, 24);
-            this.cboxClave_farmacia.TabIndex = 5;
-            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(79, 95);
@@ -136,26 +128,33 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // txtClave_empleado
+            // txtclave_empleado
             // 
-            this.txtClave_empleado.Location = new System.Drawing.Point(688, 39);
-            this.txtClave_empleado.Name = "txtClave_empleado";
-            this.txtClave_empleado.Size = new System.Drawing.Size(100, 22);
-            this.txtClave_empleado.TabIndex = 11;
-            this.txtClave_empleado.Visible = false;
+            this.txtclave_empleado.Location = new System.Drawing.Point(688, 39);
+            this.txtclave_empleado.Name = "txtclave_empleado";
+            this.txtclave_empleado.Size = new System.Drawing.Size(100, 22);
+            this.txtclave_empleado.TabIndex = 11;
+            this.txtclave_empleado.Visible = false;
+            // 
+            // txtclave
+            // 
+            this.txtclave.Location = new System.Drawing.Point(76, 274);
+            this.txtclave.Name = "txtclave";
+            this.txtclave.Size = new System.Drawing.Size(100, 22);
+            this.txtclave.TabIndex = 12;
             // 
             // FrmGuardar_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtClave_empleado);
+            this.Controls.Add(this.txtclave);
+            this.Controls.Add(this.txtclave_empleado);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.cboxClave_farmacia);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -176,12 +175,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cboxClave_farmacia;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtClave_empleado;
+        public System.Windows.Forms.TextBox txtclave;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.TextBox txtDireccion;
+        public System.Windows.Forms.TextBox txtclave_empleado;
     }
 }

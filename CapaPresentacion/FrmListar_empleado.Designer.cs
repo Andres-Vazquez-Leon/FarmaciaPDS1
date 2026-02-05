@@ -30,13 +30,21 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtnombre = new System.Windows.Forms.TextBox();
-            this.btnbuscar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
+            this.btnbuscar = new System.Windows.Forms.Button();
+            this.txtnombre = new System.Windows.Forms.TextBox();
             this.dlistar = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtnnombre = new System.Windows.Forms.RadioButton();
+            this.rbtnclave = new System.Windows.Forms.RadioButton();
+            this.nudclave = new System.Windows.Forms.NumericUpDown();
+            this.btnnuevo = new System.Windows.Forms.Button();
+            this.btneditar = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dlistar)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudclave)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,64 +58,130 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.nudclave);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnsalir);
             this.panel1.Controls.Add(this.btnbuscar);
             this.panel1.Controls.Add(this.txtnombre);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(55, 85);
+            this.panel1.Location = new System.Drawing.Point(55, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(695, 96);
             this.panel1.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Busqueda por nombre";
-            // 
-            // txtnombre
-            // 
-            this.txtnombre.Location = new System.Drawing.Point(25, 55);
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(376, 22);
-            this.txtnombre.TabIndex = 1;
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.Location = new System.Drawing.Point(480, 43);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(89, 34);
-            this.btnbuscar.TabIndex = 2;
-            this.btnbuscar.Text = "&Buscar";
-            this.btnbuscar.UseVisualStyleBackColor = true;
-            // 
             // btnsalir
             // 
-            this.btnsalir.Location = new System.Drawing.Point(579, 43);
+            this.btnsalir.Location = new System.Drawing.Point(577, 36);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(89, 34);
             this.btnsalir.TabIndex = 3;
             this.btnsalir.Text = "&Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
             // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Location = new System.Drawing.Point(478, 36);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(89, 34);
+            this.btnbuscar.TabIndex = 2;
+            this.btnbuscar.Text = "&Buscar";
+            this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+            // 
+            // txtnombre
+            // 
+            this.txtnombre.Location = new System.Drawing.Point(244, 25);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(164, 22);
+            this.txtnombre.TabIndex = 1;
+            // 
             // dlistar
             // 
             this.dlistar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dlistar.Location = new System.Drawing.Point(55, 198);
+            this.dlistar.Location = new System.Drawing.Point(55, 169);
             this.dlistar.Name = "dlistar";
             this.dlistar.RowHeadersWidth = 51;
             this.dlistar.RowTemplate.Height = 24;
-            this.dlistar.Size = new System.Drawing.Size(695, 240);
+            this.dlistar.Size = new System.Drawing.Size(695, 269);
             this.dlistar.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbtnclave);
+            this.groupBox1.Controls.Add(this.rbtnnombre);
+            this.groupBox1.Location = new System.Drawing.Point(14, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(194, 67);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ciriterios de busqueda";
+            // 
+            // rbtnnombre
+            // 
+            this.rbtnnombre.AutoSize = true;
+            this.rbtnnombre.Location = new System.Drawing.Point(20, 28);
+            this.rbtnnombre.Name = "rbtnnombre";
+            this.rbtnnombre.Size = new System.Drawing.Size(77, 20);
+            this.rbtnnombre.TabIndex = 0;
+            this.rbtnnombre.TabStop = true;
+            this.rbtnnombre.Text = "Nombre";
+            this.rbtnnombre.UseVisualStyleBackColor = true;
+            // 
+            // rbtnclave
+            // 
+            this.rbtnclave.AutoSize = true;
+            this.rbtnclave.Location = new System.Drawing.Point(118, 28);
+            this.rbtnclave.Name = "rbtnclave";
+            this.rbtnclave.Size = new System.Drawing.Size(63, 20);
+            this.rbtnclave.TabIndex = 1;
+            this.rbtnclave.TabStop = true;
+            this.rbtnclave.Text = "Clave";
+            this.rbtnclave.UseVisualStyleBackColor = true;
+            // 
+            // nudclave
+            // 
+            this.nudclave.Location = new System.Drawing.Point(244, 59);
+            this.nudclave.Name = "nudclave";
+            this.nudclave.Size = new System.Drawing.Size(120, 22);
+            this.nudclave.TabIndex = 4;
+            // 
+            // btnnuevo
+            // 
+            this.btnnuevo.Location = new System.Drawing.Point(481, 446);
+            this.btnnuevo.Name = "btnnuevo";
+            this.btnnuevo.Size = new System.Drawing.Size(75, 33);
+            this.btnnuevo.TabIndex = 3;
+            this.btnnuevo.Text = "&Nuevo";
+            this.btnnuevo.UseVisualStyleBackColor = true;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
+            // 
+            // btneditar
+            // 
+            this.btneditar.Location = new System.Drawing.Point(572, 446);
+            this.btneditar.Name = "btneditar";
+            this.btneditar.Size = new System.Drawing.Size(75, 33);
+            this.btneditar.TabIndex = 4;
+            this.btneditar.Text = "&Editar";
+            this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.Location = new System.Drawing.Point(663, 446);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(75, 33);
+            this.btneliminar.TabIndex = 5;
+            this.btneliminar.Text = "&Eliminar";
+            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // FrmListar_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.btneliminar);
+            this.Controls.Add(this.btneditar);
+            this.Controls.Add(this.btnnuevo);
             this.Controls.Add(this.dlistar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -117,6 +191,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dlistar)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudclave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +206,13 @@
         private System.Windows.Forms.Button btnsalir;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dlistar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbtnnombre;
+        private System.Windows.Forms.RadioButton rbtnclave;
+        private System.Windows.Forms.NumericUpDown nudclave;
+        private System.Windows.Forms.Button btnnuevo;
+        private System.Windows.Forms.Button btneditar;
+        private System.Windows.Forms.Button btneliminar;
     }
 }
