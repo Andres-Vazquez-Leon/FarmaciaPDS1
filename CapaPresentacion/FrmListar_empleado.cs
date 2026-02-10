@@ -85,7 +85,7 @@ namespace CapaPresentacion
             form.txtTelefono.Text = this.dlistar.CurrentRow.Cells["telefno"].Value.ToString();
             form.txtDireccion.Text = this.dlistar.CurrentRow.Cells["direccion"].Value.ToString();
             form.txtNombre.Text = this.dlistar.CurrentRow.Cells["nombrecompleto"].Value.ToString();
-            form.txtclave.Text = this.dlistar.CurrentRow.Cells["rfc"].Value.ToString();
+            form.txtClave.Text = this.dlistar.CurrentRow.Cells["rfc"].Value.ToString();
             
 
             form.Show();

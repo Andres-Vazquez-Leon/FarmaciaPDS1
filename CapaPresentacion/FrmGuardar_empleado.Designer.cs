@@ -36,10 +36,10 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtclave_empleado = new System.Windows.Forms.TextBox();
-            this.txtclave = new System.Windows.Forms.TextBox();
+            this.btnguardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtClave_empleado = new System.Windows.Forms.TextBox();
+            this.txtClave_farmacia = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -110,48 +110,49 @@
             this.txtDireccion.TabIndex = 8;
             this.txtDireccion.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // button1
+            // btnguardar
             // 
-            this.button1.Location = new System.Drawing.Point(393, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnguardar.Location = new System.Drawing.Point(393, 348);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(96, 23);
+            this.btnguardar.TabIndex = 9;
+            this.btnguardar.Text = "&Guardar";
+            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(521, 348);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 26);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(521, 348);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(96, 26);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // txtclave_empleado
+            // txtClave_empleado
             // 
-            this.txtclave_empleado.Location = new System.Drawing.Point(688, 39);
-            this.txtclave_empleado.Name = "txtclave_empleado";
-            this.txtclave_empleado.Size = new System.Drawing.Size(100, 22);
-            this.txtclave_empleado.TabIndex = 11;
-            this.txtclave_empleado.Visible = false;
+            this.txtClave_empleado.Location = new System.Drawing.Point(688, 39);
+            this.txtClave_empleado.Name = "txtClave_empleado";
+            this.txtClave_empleado.Size = new System.Drawing.Size(100, 22);
+            this.txtClave_empleado.TabIndex = 11;
+            this.txtClave_empleado.Visible = false;
             // 
-            // txtclave
+            // txtClave_farmacia
             // 
-            this.txtclave.Location = new System.Drawing.Point(76, 274);
-            this.txtclave.Name = "txtclave";
-            this.txtclave.Size = new System.Drawing.Size(100, 22);
-            this.txtclave.TabIndex = 12;
+            this.txtClave_farmacia.Location = new System.Drawing.Point(76, 274);
+            this.txtClave_farmacia.Name = "txtClave_farmacia";
+            this.txtClave_farmacia.Size = new System.Drawing.Size(100, 22);
+            this.txtClave_farmacia.TabIndex = 12;
             // 
             // FrmGuardar_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtclave);
-            this.Controls.Add(this.txtclave_empleado);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtClave_farmacia);
+            this.Controls.Add(this.txtClave_empleado);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtNombre);
@@ -175,12 +176,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        public System.Windows.Forms.TextBox txtclave;
+        private System.Windows.Forms.Button btnguardar;
+        private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.TextBox txtClave_farmacia;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtTelefono;
         public System.Windows.Forms.TextBox txtDireccion;
-        public System.Windows.Forms.TextBox txtclave_empleado;
+        public System.Windows.Forms.TextBox txtClave_empleado;
     }
 }
