@@ -59,9 +59,6 @@ namespace CapaDatos
         instancia.Mostrar_informacion("spbuscarempleado_");
         */
 
-        DataTable lista = Mostrar_informacion("splistar_empleado_lista");
-        DataTable nombre = Mostrar_informacion("spbuscar_empleado_nombre");
-        DataTable eliminar = Mostrar_informacion("speliminar_empleado_por_cve");
 
 
         public string Guardar(CDEmpleado cli)
