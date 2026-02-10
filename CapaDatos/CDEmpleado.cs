@@ -14,7 +14,7 @@ namespace CapaDatos
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public string Nombrecompleto { get; set; }
-        public string Cve_farm { get; set; }
+        public int Cve_farm { get; set; }
 
         /*
         public string spbuscar = "spbuscar_empleado_nombre";

@@ -81,11 +81,11 @@ namespace CapaPresentacion
 
             form.Edit = true;
 
-            form.txtclave_empleado.Text = this.dlistar.CurrentRow.Cells["cve_empelado"].Value.ToString(); //cell hace referencia a una celda y toma el valor idcliente
+            form.txtClave_empleado.Text = this.dlistar.CurrentRow.Cells["cve_empelado"].Value.ToString(); //cell hace referencia a una celda y toma el valor idcliente
             form.txtTelefono.Text = this.dlistar.CurrentRow.Cells["telefno"].Value.ToString();
             form.txtDireccion.Text = this.dlistar.CurrentRow.Cells["direccion"].Value.ToString();
             form.txtNombre.Text = this.dlistar.CurrentRow.Cells["nombrecompleto"].Value.ToString();
-            form.txtClave.Text = this.dlistar.CurrentRow.Cells["rfc"].Value.ToString();
+            form.txtClave_farmacia.Text = this.dlistar.CurrentRow.Cells["rfc"].Value.ToString();
             
 
             form.Show();

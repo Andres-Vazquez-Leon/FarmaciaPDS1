@@ -40,11 +40,12 @@ namespace CapaNegocio
         }
 
 
-        public static string Editar(int cve_empleado, string telefono, string nombrecompleto, string cve_farm)
+        public static string Editar(int cve_empleado, string telefono, string nombrecompleto, string direccion, int cve_farm)
         {
             CDEmpleado Datos = new CDEmpleado();
             Datos.Cve_empleado = cve_empleado;
             Datos.Telefono = telefono;
+            Datos.Direccion = direccion;
             Datos.Nombrecompleto = nombrecompleto;
             Datos.Cve_farm = cve_farm;
 
@@ -52,10 +53,11 @@ namespace CapaNegocio
 
         }
 
-        public static string Guardar(int cve_empleado, string telefono, string nombrecompleto, string cve_farm)
+        public static string Guardar(string telefono, string direccion, string nombrecompleto, int cve_farm)
         {
             CDEmpleado Datos = new CDEmpleado();
             Datos.Telefono = telefono;
+            Datos.Direccion = direccion;
             Datos.Nombrecompleto = nombrecompleto;
             Datos.Cve_farm = cve_farm;
 
