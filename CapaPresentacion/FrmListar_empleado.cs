@@ -39,7 +39,7 @@ namespace CapaPresentacion
 
         private void BuscarClave()
         {
-            this.dlistar.DataSource = CNEmpleado.BuscarClave(((int)nudclave.Value)); // se uso un numericUpDown por conflicto de tipo de datos con txtnombre
+            this.dlistar.DataSource = CNEmpleado.BuscarClave(Convert.ToInt32(txtnombre.Text)); // se uso un numericUpDown por conflicto de tipo de datos con txtnombre
         }                                                                            // despues se convirtio el valor decimal de nudclave a int para que sea compatible   
                                                                                      // con el metodo buscarclave de CNEmpleado   
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -104,7 +104,7 @@ namespace CapaPresentacion
                     if (opcion == DialogResult.OK)
                     {
                         string cve_empleado = dlistar.CurrentRow.Cells["cve_empleado"].Value.ToString();
-                        CNEmpleado.Eliminar(Convert.ToInt32(cve_empleado));
+                        CNEmpleado.Eliminar(Convert.ToInt32(cve_empleado)); //
 
                         MessageBox.Show("Registro elimninado", "Farmacia", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

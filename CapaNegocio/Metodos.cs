@@ -50,5 +50,40 @@ namespace CapaNegocio
             }
             return resul;
         }
+
+
+        public DataTable BuscarNombre(string nombre)
+        {
+            DataTable resul = new DataTable("cliente");
+            SqlConnection conexion = new SqlConnection();
+
+            try
+            {
+                conexion.ConnectionString = Conexion.Conn;
+                SqlCommand Cmd = new SqlCommand("spbuscar_cliente_nombre", conexion);
+
+                Cmd.CommandType = CommandType.StoredProcedure;
+
+                // parámetro
+                Cmd.Parameters.AddWithValue("@nombre", nombre);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
+                SqlDat.Fill(resul);
+            }
+            catch (Exception ex)
+            {
+                resul = null;
+                throw ex;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+
+            return resul;
+        }
     }
 }

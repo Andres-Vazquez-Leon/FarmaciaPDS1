@@ -62,6 +62,7 @@ namespace CapaPresentacion
                     }
                     else if (this.Edit == true)
                     {
+                        txtClave_farmacia.Enabled = false;
                         CNEmpleado.Editar(Convert.ToInt32(this.txtClave_empleado.Text), this.txtNombre.Text, this.txtDireccion.Text, this.txtTelefono.Text); //, Convert.ToInt32(this.txtClave_farmacia));
                         MessageBox.Show("Empleado editado correctamente", "Farmacia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

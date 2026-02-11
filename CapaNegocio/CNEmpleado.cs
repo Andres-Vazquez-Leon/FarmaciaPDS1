@@ -1,30 +1,40 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using CapaDatos;
 //using CapaNegocio;
 
 namespace CapaNegocio
 {
     public class CNEmpleado
     {
+        static string buscarnombre ="spbuscar_empleado_por_nombre1";
+        static string buscarclave ="spbuscar_empleado_por_clave1";
+        static string eliminar ="speliminar_empleado_por_cve1";
+
+
         public static DataTable BuscarNombre(string nombrecompleto)  // para que funcione la llamada al metodo en la clase FrmListar_empleado se siguio la sugerencia del 
         {                                                  // editor de codigo, se agregaran al resto de metodos que usen la clase metodo excepto listar
             Metodos Datos = new Metodos();
-            CDEmpleado Datos_1 = new CDEmpleado();
-            Datos_1.Nombrecompleto = nombrecompleto;
-            return Datos.Mostrar_informacion("spbuscar_empleado_nombre");
+            CDEmpleado DatosE = new CDEmpleado();
+            DatosE.Nombrecompleto = nombrecompleto;
+            List<SqlParameter> parametros = new List<SqlParameter> {
+            new SqlParameter("@nombrecompleto", nombrecompleto)};
+            return Datos.Mostrar_informacion(buscarnombre, parametros);
         }
 
         public static DataTable BuscarClave(int cve_empleado)
         {
             Metodos Datos = new Metodos();
-            CDEmpleado Datos_1 = new CDEmpleado();
-            Datos_1.Cve_empleado = cve_empleado;
-            return Datos.Mostrar_informacion("spbuscar_empleado_clave");
+            CDEmpleado DatosE = new CDEmpleado(); //
+            //DatosE.Cve_empleado = cve_empleado;
+            List<SqlParameter> parametros = new List<SqlParameter> {
+            new SqlParameter("@cve_empleado", cve_empleado)};
+            return Datos.Mostrar_informacion(buscarclave, parametros); //
         }
 
 
@@ -37,9 +47,11 @@ namespace CapaNegocio
         public static DataTable Eliminar(int cve_empleado)
         {
             Metodos Datos = new Metodos();
-            CDEmpleado Datos_1 = new CDEmpleado();
-            Datos_1.Cve_empleado = cve_empleado;
-            return Datos.Mostrar_informacion("speliminar_empleado");
+            CDEmpleado DatosE = new CDEmpleado(); //
+            //DatosE.Cve_empleado = cve_empleado;
+            List<SqlParameter> parametros = new List<SqlParameter> {
+            new SqlParameter("@cve_empleado", cve_empleado)};
+            return Datos.Mostrar_informacion(eliminar, parametros); //
         }
 
 
@@ -56,7 +68,7 @@ namespace CapaNegocio
 
         }
 
-        public static string Guardar(string nombrecompleto, string telefono, string direccion) //, int cve_farm)
+        public static string Guardar(string nombrecompleto, string direccion, string telefono) //, int cve_farm)
         {
             CDEmpleado Datos = new CDEmpleado();
             Datos.Nombrecompleto = nombrecompleto;
