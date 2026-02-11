@@ -6,15 +6,17 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace CapaDatos
+
+
+namespace CapaNegocio
 {
     public class Metodos
     {
-        public DataTable Mostrar_informacion(string store_p)
+        public DataTable Mostrar_informacion(string store_p, List<SqlParameter> parametros = null)
         {
+            DataTable resul = new DataTable(); 
 
-
-            DataTable resul = new DataTable("empleado");
+            //DataTable resul = new DataTable("empleado");
             SqlConnection conexion = new SqlConnection();
 
             try
@@ -23,13 +25,20 @@ namespace CapaDatos
                 SqlCommand Cmd = new SqlCommand(store_p, conexion); // pendiente de crear procedimiento
                 Cmd.CommandType = CommandType.StoredProcedure; // Cmd ejecucion del procedimiento
 
+                //linea que sirve para agregar un parametro si List<SqlParameter> es distinto de null
+                if (parametros != null)
+                {
+                    Cmd.Parameters.AddRange(parametros.ToArray());
+                }
+
+
                 SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
                 SqlDat.Fill(resul);
             }
-            catch (Exception ex)
+            catch //(Exception ex)
             {
-                resul = null;
-                throw ex;
+                //resul = null;
+                throw;
             }
             finally
             {

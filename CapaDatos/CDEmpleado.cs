@@ -71,11 +71,14 @@ namespace CapaDatos
                 SqlCommand Cmd = new SqlCommand("spguardar_empleado", conexion); // procedimiento aun no creado
                 Cmd.CommandType = CommandType.StoredProcedure;
 
+                //SqlParameter parId = new SqlParameter("@cve_empleado", SqlDbType.Int);
+                //parId.Direction = ParameterDirection.Output;
+
                 Cmd.Parameters.AddWithValue("@cve_empleado", SqlDbType.Int).Direction = ParameterDirection.Output; //en los metodos de guardar los id que se crean solos en la base de datos utilizan .Output
                 Cmd.Parameters.AddWithValue("@telefono", cli.Telefono);
                 Cmd.Parameters.AddWithValue("@direccion", cli.Direccion);                                          //en caso sea un metodo de editar no llevaria .Output, esto tambien aplica para la base de datos
                 Cmd.Parameters.AddWithValue("@nombrecompleto", cli.Nombrecompleto);     
-                Cmd.Parameters.AddWithValue("@Cve_farm", cli.Cve_farm);
+                //Cmd.Parameters.AddWithValue("@Cve_farm", cli.Cve_farm);
                 
                 
                 
@@ -107,11 +110,11 @@ namespace CapaDatos
                 SqlCommand Cmd = new SqlCommand("speditar_empleado", conexion); // procedimiento aun no creado
                 Cmd.CommandType = CommandType.StoredProcedure;
 
-                Cmd.Parameters.AddWithValue("@cve_empleado", SqlDbType.Int); //.Direction = ParameterDirection.Output; //en los metodos de guardar los id que se crean solos en la base de datos utilizan .Output
-                Cmd.Parameters.AddWithValue("@telefono", cli.Telefono);
-                Cmd.Parameters.AddWithValue("@direccion", cli.Direccion);                                          //en caso sea un metodo de editar no llevaria .Output, esto tambien aplica para la base de datos
+                Cmd.Parameters.AddWithValue("@cve_empleado", cli.Cve_empleado); //.Direction = ParameterDirection.Output; //en los metodos de guardar los id que se crean solos en la base de datos utilizan .Output
                 Cmd.Parameters.AddWithValue("@nombrecompleto", cli.Nombrecompleto);                                // es probable que en el metodo no sea necesario cve_empleado y Cve_farm en editar, ya que esta fijado por la base de datos
-                Cmd.Parameters.AddWithValue("@Cve_farm", cli.Cve_farm);                                            //cambie de opinion con las cve
+                Cmd.Parameters.AddWithValue("@direccion", cli.Direccion);                                          //en caso sea un metodo de editar no llevaria .Output, esto tambien aplica para la base de datos
+                Cmd.Parameters.AddWithValue("@telefono", cli.Telefono);
+                //Cmd.Parameters.AddWithValue("@Cve_farm", cli.Cve_farm);                                            //cambie de opinion con las cve
 
 
 
@@ -132,7 +135,7 @@ namespace CapaDatos
             return resul;
         }
 
-        
+
         //public DataTable Buscar_clave() //No se si deberia un incluir esta funcion de busqueda
         //{
 
@@ -197,7 +200,21 @@ namespace CapaDatos
         //    return resul;
         //}
 
-
+        public bool ProbarConexion()
+        {
+            using (SqlConnection conexion = new SqlConnection(Conexion.Conn))
+            {
+                try
+                {
+                    conexion.Open();
+                    return true; // conexión exitosa
+                }
+                catch
+                {
+                    return false; // error de conexión
+                }
+            }
+        }
 
     }
 }

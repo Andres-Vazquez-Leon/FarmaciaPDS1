@@ -30,21 +30,22 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nudclave = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtnclave = new System.Windows.Forms.RadioButton();
+            this.rbtnnombre = new System.Windows.Forms.RadioButton();
             this.btnsalir = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.dlistar = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnnombre = new System.Windows.Forms.RadioButton();
-            this.rbtnclave = new System.Windows.Forms.RadioButton();
-            this.nudclave = new System.Windows.Forms.NumericUpDown();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dlistar)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudclave)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dlistar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,6 +68,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(695, 96);
             this.panel1.TabIndex = 1;
+            // 
+            // nudclave
+            // 
+            this.nudclave.Location = new System.Drawing.Point(244, 59);
+            this.nudclave.Name = "nudclave";
+            this.nudclave.Size = new System.Drawing.Size(120, 22);
+            this.nudclave.TabIndex = 4;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbtnclave);
+            this.groupBox1.Controls.Add(this.rbtnnombre);
+            this.groupBox1.Location = new System.Drawing.Point(14, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(194, 67);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ciriterios de busqueda";
+            // 
+            // rbtnclave
+            // 
+            this.rbtnclave.AutoSize = true;
+            this.rbtnclave.Location = new System.Drawing.Point(118, 28);
+            this.rbtnclave.Name = "rbtnclave";
+            this.rbtnclave.Size = new System.Drawing.Size(63, 20);
+            this.rbtnclave.TabIndex = 1;
+            this.rbtnclave.TabStop = true;
+            this.rbtnclave.Text = "Clave";
+            this.rbtnclave.UseVisualStyleBackColor = true;
+            // 
+            // rbtnnombre
+            // 
+            this.rbtnnombre.AutoSize = true;
+            this.rbtnnombre.Location = new System.Drawing.Point(20, 28);
+            this.rbtnnombre.Name = "rbtnnombre";
+            this.rbtnnombre.Size = new System.Drawing.Size(77, 20);
+            this.rbtnnombre.TabIndex = 0;
+            this.rbtnnombre.TabStop = true;
+            this.rbtnnombre.Text = "Nombre";
+            this.rbtnnombre.UseVisualStyleBackColor = true;
             // 
             // btnsalir
             // 
@@ -104,46 +145,6 @@
             this.dlistar.Size = new System.Drawing.Size(695, 269);
             this.dlistar.TabIndex = 2;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbtnclave);
-            this.groupBox1.Controls.Add(this.rbtnnombre);
-            this.groupBox1.Location = new System.Drawing.Point(14, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(194, 67);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ciriterios de busqueda";
-            // 
-            // rbtnnombre
-            // 
-            this.rbtnnombre.AutoSize = true;
-            this.rbtnnombre.Location = new System.Drawing.Point(20, 28);
-            this.rbtnnombre.Name = "rbtnnombre";
-            this.rbtnnombre.Size = new System.Drawing.Size(77, 20);
-            this.rbtnnombre.TabIndex = 0;
-            this.rbtnnombre.TabStop = true;
-            this.rbtnnombre.Text = "Nombre";
-            this.rbtnnombre.UseVisualStyleBackColor = true;
-            // 
-            // rbtnclave
-            // 
-            this.rbtnclave.AutoSize = true;
-            this.rbtnclave.Location = new System.Drawing.Point(118, 28);
-            this.rbtnclave.Name = "rbtnclave";
-            this.rbtnclave.Size = new System.Drawing.Size(63, 20);
-            this.rbtnclave.TabIndex = 1;
-            this.rbtnclave.TabStop = true;
-            this.rbtnclave.Text = "Clave";
-            this.rbtnclave.UseVisualStyleBackColor = true;
-            // 
-            // nudclave
-            // 
-            this.nudclave.Location = new System.Drawing.Point(244, 59);
-            this.nudclave.Name = "nudclave";
-            this.nudclave.Size = new System.Drawing.Size(120, 22);
-            this.nudclave.TabIndex = 4;
-            // 
             // btnnuevo
             // 
             this.btnnuevo.Location = new System.Drawing.Point(481, 446);
@@ -174,11 +175,22 @@
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(523, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmListar_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.btnnuevo);
@@ -190,10 +202,10 @@
             this.Load += new System.EventHandler(this.FrmListar_empleado_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dlistar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudclave)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudclave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dlistar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +226,6 @@
         private System.Windows.Forms.Button btnnuevo;
         private System.Windows.Forms.Button btneditar;
         private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.Button button1;
     }
 }

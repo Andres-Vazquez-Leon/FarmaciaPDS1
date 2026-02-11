@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using CapaDatos;
+//using CapaNegocio;
 
 namespace CapaNegocio
 {
@@ -25,10 +26,12 @@ namespace CapaNegocio
             Datos_1.Cve_empleado = cve_empleado;
             return Datos.Mostrar_informacion("spbuscar_empleado_clave");
         }
+
+
         public static DataTable Listar()
         {
             Metodos Datos = new Metodos();
-            return Datos.Mostrar_informacion("splistar_empleado");
+            return Datos.Mostrar_informacion("splistar_empleado1", null);
         }
 
         public static DataTable Eliminar(int cve_empleado)
@@ -40,30 +43,37 @@ namespace CapaNegocio
         }
 
 
-        public static string Editar(int cve_empleado, string telefono, string nombrecompleto, string direccion, int cve_farm)
+        public static string Editar(int cve_empleado, string nombrecompleto, string direccion, string telefono)//, int cve_farm)
         {
             CDEmpleado Datos = new CDEmpleado();
             Datos.Cve_empleado = cve_empleado;
-            Datos.Telefono = telefono;
-            Datos.Direccion = direccion;
             Datos.Nombrecompleto = nombrecompleto;
-            Datos.Cve_farm = cve_farm;
+            Datos.Direccion = direccion;
+            Datos.Telefono = telefono;
+            //Datos.Cve_farm = cve_farm;
 
             return Datos.Editar(Datos);
 
         }
 
-        public static string Guardar(string telefono, string direccion, string nombrecompleto, int cve_farm)
+        public static string Guardar(string nombrecompleto, string telefono, string direccion) //, int cve_farm)
         {
             CDEmpleado Datos = new CDEmpleado();
+            Datos.Nombrecompleto = nombrecompleto;
             Datos.Telefono = telefono;
             Datos.Direccion = direccion;
-            Datos.Nombrecompleto = nombrecompleto;
-            Datos.Cve_farm = cve_farm;
+            
+            //Datos.Cve_farm = cve_farm;
 
             return Datos.Guardar(Datos);
 
 
+        }
+
+        public static bool ProbarConexion()
+        {
+            CDEmpleado datos = new CDEmpleado();
+            return datos.ProbarConexion();
         }
     }
 }

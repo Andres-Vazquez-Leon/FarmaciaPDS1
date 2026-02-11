@@ -81,11 +81,11 @@ namespace CapaPresentacion
 
             form.Edit = true;
 
-            form.txtClave_empleado.Text = this.dlistar.CurrentRow.Cells["cve_empelado"].Value.ToString(); //cell hace referencia a una celda y toma el valor idcliente
-            form.txtTelefono.Text = this.dlistar.CurrentRow.Cells["telefno"].Value.ToString();
-            form.txtDireccion.Text = this.dlistar.CurrentRow.Cells["direccion"].Value.ToString();
+            form.txtClave_empleado.Text = this.dlistar.CurrentRow.Cells["cve_empleado"].Value.ToString(); //cell hace referencia a una celda y toma el valor idcliente
             form.txtNombre.Text = this.dlistar.CurrentRow.Cells["nombrecompleto"].Value.ToString();
-            form.txtClave_farmacia.Text = this.dlistar.CurrentRow.Cells["rfc"].Value.ToString();
+            form.txtDireccion.Text = this.dlistar.CurrentRow.Cells["direccion"].Value.ToString();
+            form.txtTelefono.Text = this.dlistar.CurrentRow.Cells["telefono"].Value.ToString();
+            //form.txtClave_farmacia.Text = this.dlistar.CurrentRow.Cells["rfc"].Value.ToString();
             
 
             form.Show();
@@ -117,6 +117,22 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool ok = CNEmpleado.ProbarConexion();
+
+            if (ok)
+                MessageBox.Show("✅ Conexión exitosa a la base de datos",
+                                "Prueba de conexión",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            else
+                MessageBox.Show("❌ No se pudo conectar a la base de datos",
+                                "Prueba de conexión",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
         }
     }
 }
